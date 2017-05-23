@@ -11,7 +11,13 @@ module.exports = {
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
-            loader: "babel-loader"
+            use: ["babel-loader"]
+        }, {
+            test: /\.(css|scss)$/,
+            use: ["style-loader", "css-loader", "sass-loader"]
         }]
+    },
+    watchOptions: {
+        poll: true
     }
 }
